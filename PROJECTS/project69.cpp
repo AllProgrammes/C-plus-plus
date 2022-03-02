@@ -23,19 +23,26 @@ int main()
 }
 int ask()
 {
-    char option;
+    string option;
     cout << "\n\nIf you want to continue press 'y/Y', if not then press any key : ";
     cin >> option;
-    switch (option)
+    // switch (option)
+    // {
+    // case 'y':
+    //     start();
+    //     break;
+    // case 'Y':             COULD HAVE BEEN USED BUT I WANTED TO TRY IF ELSE CONDITION
+    //     start();
+    //     break;
+    // default:
+    //     break;
+    // }
+    if (option == "y" || option == "Y")
     {
-    case 'y':
         start();
-        break;
-    case 'Y':
-        start();
-        break;
-    default:
-        break;
+    }
+    else
+    {
     }
 
     return 0;
