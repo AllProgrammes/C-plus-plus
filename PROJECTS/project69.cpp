@@ -7,6 +7,7 @@ int table();
 int shapes();
 int oddeven();
 int marks();
+int cal();
 int start();
 int sub();
 int matrix();
@@ -39,11 +40,39 @@ int ask()
 
     return 0;
 }
+int cal()
+{
+    cout << endl;
+    char n;
+    cout << "\nM(multiply),\nS(substraction),\nD(division),\nA(addition)";
+    cout << "\nSo, What you want to do ? ";
+    cin >> n;
+    switch (n)
+    {
+    case 'A':
+        add();
+        break;
+    case 'M':
+        mul();
+        break;
+    case 'D':
+        div();
+        break;
+    case 'S':
+        sub();
+        break;
+    default:
+        cout << "Please enter any valid code .\n";
+        cal();
+        break;
+    }
+    return 0;
+}
 int start()
 {
     cout << "\n";
     char X;
-    cout << "Available codes as of now are :- \nm(multiply),\ns(substraction),\nD(division),\nA(addition),\nE(checks for odd even),\nS(shapes),\nT(table),\nO(d.o.b),\nX(Print Matrix),\nP(check for prime),\nM(Enter marks of students and find its total and percentage)";
+    cout << "Available codes as of now are :- \nC(calculator),\nE(checks for odd even),\nS(shapes),\nT(table),\nO(d.o.b),\nX(Print Matrix),\nP(check for prime),\nM(Enter marks of students and find its total and percentage)";
     cout << "\n\nEnter a number code of what you : ";
     cin >> X;
     switch (X)
@@ -51,11 +80,11 @@ int start()
     case 'M':
         marks();
         break;
+    case 'C':
+        cal();
+        break;
     case 'X':
         matrix();
-        break;
-    case 'A':
-        add();
         break;
     case 'P':
     {
@@ -81,15 +110,6 @@ int start()
         ask();
     }
     break;
-    case 'm':
-        mul();
-        break;
-    case 'D':
-        div();
-        break;
-    case 's':
-        sub();
-        break;
     case 'E':
         oddeven();
         break;
