@@ -8,6 +8,7 @@ int shapes();
 int oddeven();
 int marks();
 int sub();
+int matrix();
 int dob();
 // int prime();
 int main()
@@ -15,13 +16,16 @@ int main()
     cout << "\n\n";
     char X;
     cout << "\t\t-- THIS IS A SMALL PROGRAMME WHICH CAN DO MULTIPLE WORKS --\n\n\n";
-    cout << "Available codes as of now are :- \nm(multiply),\ns(substraction),\nD(division),\nA(addition),\nE(checks for odd even),\nS(shapes),\nT(table),\nO(d.o.b),\nP(check for prime),\nM(Enter marks of students and find its total and percentage)";
+    cout << "Available codes as of now are :- \nm(multiply),\ns(substraction),\nD(division),\nA(addition),\nE(checks for odd even),\nS(shapes),\nT(table),\nO(d.o.b),\nX(Print Matrix),\nP(check for prime),\nM(Enter marks of students and find its total and percentage)";
     cout << "\n\nEnter a number code of what you : ";
     cin >> X;
     switch (X)
     {
     case 'M':
         marks();
+        break;
+    case 'X':
+        matrix();
         break;
     case 'A':
         add();
@@ -127,6 +131,31 @@ int table()
     for (i = 1; i <= 10; i++)
     {
         printf("%d x %d = %d\n", n, i, n * i);
+    }
+
+    return 0;
+}
+int matrix()
+{
+    int row, col;
+    int matrix[100][100];
+    cout << "Enter the number of rows and column : ";
+    cin >> row >> col;
+    for (int r = 1; r <= row; r++)
+    {
+        for (int c = 1; c <= col; c++)
+        {
+            cout << "Enter number " << r << c << " : ";
+            cin >> matrix[r][c];
+        }
+    }
+    for (int r = 1; r <= row; r++)
+    {
+        for (int c = 1; c <= col; c++)
+        {
+            cout << matrix[r][c] << "\t";
+        }
+        cout << "\n";
     }
 
     return 0;
