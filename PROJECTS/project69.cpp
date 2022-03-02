@@ -6,6 +6,7 @@ int mul();
 int table();
 int shapes();
 int oddeven();
+int marks();
 int sub();
 int dob();
 // int prime();
@@ -14,11 +15,14 @@ int main()
     cout << "\n\n";
     char X;
     cout << "\t\t-- THIS IS A SMALL PROGRAMME WHICH CAN DO MULTIPLE WORKS --\n\n\n";
-    cout << "Available codes as of now are :- \nM(multiply),\ns(substraction),\nD(division),\nA(addition),\nE(checks for odd even),\nS(shapes),\nT(table),\nO(d.o.b),\nP(check for prime)";
+    cout << "Available codes as of now are :- \nm(multiply),\ns(substraction),\nD(division),\nA(addition),\nE(checks for odd even),\nS(shapes),\nT(table),\nO(d.o.b),\nP(check for prime),\nM(Enter marks of students and find its total and percentage)";
     cout << "\n\nEnter a number code of what you : ";
     cin >> X;
     switch (X)
     {
+    case 'M':
+        marks();
+        break;
     case 'A':
         add();
         break;
@@ -45,7 +49,7 @@ int main()
         }
     }
     break;
-    case 'M':
+    case 'm':
         mul();
         break;
     case 'D':
@@ -141,6 +145,38 @@ int sub()
         cout << "Difference of " << num1 << " and " << num2 << " is " << num2 - num1;
     }
 
+    return 0;
+}
+int marks()
+{
+    string name[100];
+    int n;
+    int english[100], maths[100], hindi[100], science[100], socialscience[100];
+    ;
+    cout << "Enter the number of students : ";
+    cin >> n;
+    for (int i = 1; i <= n; i++)
+    {
+        cout << "\nEnter the name of student " << i << " : ";
+        cin >> name[i];
+        cout << "\nEnter his/her english marks : ";
+        cin >> english[i];
+        cout << "Enter his/her maths marks : ";
+        cin >> maths[i];
+        cout << "Enter his/her hindi marks : ";
+        cin >> hindi[i];
+        cout << "Enter his/her science marks : ";
+        cin >> science[i];
+        cout << "Enter his/her social science marks : ";
+        cin >> socialscience[i];
+    }
+    for (int i = 1; i <= n; i++)
+    {
+        float sum = english[i] + maths[i] + hindi[i] + science[i] + socialscience[i];
+        float per = sum / 500 * 100;
+        cout << "\nTotal marks of " << name[i] << " is " << sum << " out of 500"
+             << " and percentage is " << per << "% .";
+    }
     return 0;
 }
 // int prime()
