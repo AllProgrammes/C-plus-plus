@@ -296,7 +296,7 @@ int oddeven()
 int shapes()
 {
     char S;
-    cout << "s(star),\nt(temple),\nr(rectangle)";
+    cout << "s(star),\nt(temple),\nr(rectangle),\nq(square)";
     cout << "\nWhat shape you want to see ?\n";
     cin >> S;
     switch (S)
@@ -330,6 +330,40 @@ int shapes()
             cout << "\n";
         }
         for (col = 0; col < length; col++)
+        {
+            cout << "x ";
+        }
+    }
+    break;
+    case 'q':
+    {
+        int row, col, s;
+        int side;
+        cout << "Enter the side of square : ";
+        cin >> side;
+
+        for (col = 0; col < side; col++)
+        {
+            cout << "x ";
+        }
+        cout << "\n";
+        for (row = 0; row < (side - 2); row++)
+        {
+            for (col = 0; col < 1; col++)
+            {
+                cout << "x ";
+            }
+            for (s = 0; s < (side - 2); s++)
+            {
+                cout << "  ";
+            }
+            for (col = 0; col < 1; col++)
+            {
+                cout << "x";
+            }
+            cout << "\n";
+        }
+        for (col = 0; col < side; col++)
         {
             cout << "x ";
         }
