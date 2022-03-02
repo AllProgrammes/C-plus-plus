@@ -7,6 +7,7 @@ int table();
 int shapes();
 int oddeven();
 int marks();
+int start();
 int sub();
 int matrix();
 int dob();
@@ -14,8 +15,14 @@ int dob();
 int main()
 {
     cout << "\n\n";
-    char X;
     cout << "\t\t-- THIS IS A SMALL PROGRAMME WHICH CAN DO MULTIPLE WORKS --\n\n\n";
+    start();
+    return 0;
+}
+int start()
+{
+    cout << "\n\n";
+    char X;
     cout << "Available codes as of now are :- \nm(multiply),\ns(substraction),\nD(division),\nA(addition),\nE(checks for odd even),\nS(shapes),\nT(table),\nO(d.o.b),\nX(Print Matrix),\nP(check for prime),\nM(Enter marks of students and find its total and percentage)";
     cout << "\n\nEnter a number code of what you : ";
     cin >> X;
@@ -51,6 +58,7 @@ int main()
         {
             printf("%d is a not a prime number. ", b);
         }
+        start();
     }
     break;
     case 'm':
@@ -91,6 +99,7 @@ int add()
         sum = sum + num[i];
     }
     cout << "sum of " << n << " numbers is = " << sum;
+    start();
     return 0;
 }
 int mul()
@@ -105,6 +114,7 @@ int mul()
         product = product * num[i];
     }
     cout << "product of " << n << " numbers is = " << product;
+    start();
     return 0;
 }
 int div()
@@ -120,7 +130,7 @@ int div()
     {
         cout << "Quotient is " << num2 / num1 << " and remainder is " << num2 % num1;
     }
-
+    start();
     return 0;
 }
 int table()
@@ -132,7 +142,7 @@ int table()
     {
         printf("%d x %d = %d\n", n, i, n * i);
     }
-
+    start();
     return 0;
 }
 int matrix()
@@ -157,7 +167,7 @@ int matrix()
         }
         cout << "\n";
     }
-
+    start();
     return 0;
 }
 int sub()
@@ -173,7 +183,7 @@ int sub()
     {
         cout << "Difference of " << num1 << " and " << num2 << " is " << num2 - num1;
     }
-
+    start();
     return 0;
 }
 int marks()
@@ -206,6 +216,7 @@ int marks()
         cout << "\nTotal marks of " << name[i] << " is " << sum << " out of 500"
              << " and percentage is " << per << "% .";
     }
+    start();
     return 0;
 }
 // int prime()
@@ -275,7 +286,7 @@ int dob()
     {
         printf(" ARE U DOING TIME TRAVEL ?");
     }
-
+    start();
     return 0;
 }
 int oddeven()
@@ -291,6 +302,7 @@ int oddeven()
     {
         cout << num1 << " is a odd number .";
     }
+    start();
     return 0;
 }
 int shapes()
@@ -333,6 +345,7 @@ int shapes()
         {
             cout << "x ";
         }
+        start();
     }
     break;
     case 'q':
@@ -367,6 +380,7 @@ int shapes()
         {
             cout << "x ";
         }
+        start();
     }
     break;
     case 's':
@@ -447,6 +461,7 @@ int shapes()
             e++;
             printf("\n");
         }
+        start();
     }
     break;
     case 't':
@@ -546,6 +561,7 @@ int shapes()
                 printf("-");
             }
         }
+        start();
     }
     break;
     default:
