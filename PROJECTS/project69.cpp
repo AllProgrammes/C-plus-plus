@@ -303,22 +303,25 @@ int shapes()
     {
     case 'r':
     {
-        cout << "\n\n\n";
         int row, col, s;
-        for (s = 0; s < 22; s++)
+        int breadth, length;
+        cout << "Enter the length and breadth of Rectangle : ";
+        cin >> length >> breadth;
+
+        for (col = 0; col < length; col++)
         {
-            cout << "x";
+            cout << "x ";
         }
         cout << "\n";
-        for (row = 0; row < 5; row++)
+        for (row = 0; row < (breadth - 2); row++)
         {
             for (col = 0; col < 1; col++)
             {
-                cout << "x";
+                cout << "x ";
             }
-            for (s = 0; s < 20; s++)
+            for (s = 0; s < (length - 2); s++)
             {
-                cout << " ";
+                cout << "  ";
             }
             for (col = 0; col < 1; col++)
             {
@@ -326,9 +329,9 @@ int shapes()
             }
             cout << "\n";
         }
-        for (s = 0; s < 22; s++)
+        for (col = 0; col < length; col++)
         {
-            cout << "x";
+            cout << "x ";
         }
     }
     break;
