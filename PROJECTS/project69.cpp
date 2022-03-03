@@ -195,25 +195,75 @@ int table()
 int matrix()
 {
     int row, col;
-    int matrix[100][100];
+    string choose;
+    int matrix1[100][100];
+    int matrix2[100][100];
     cout << "Enter the number of rows and column : ";
     cin >> row >> col;
+    cout << "\nFill values of Matrix 1 \n";
     for (int r = 1; r <= row; r++)
     {
         for (int c = 1; c <= col; c++)
         {
             cout << "Enter number " << r << c << " : ";
-            cin >> matrix[r][c];
+            cin >> matrix1[r][c];
         }
     }
+    cout << "\nFill values of Matrix 2 \n";
     for (int r = 1; r <= row; r++)
     {
         for (int c = 1; c <= col; c++)
         {
-            cout << matrix[r][c] << "\t";
+            cout << "Enter number " << r << c << " : ";
+            cin >> matrix2[r][c];
+        }
+    }
+    cout << "\nYour matrix tables are as follow :-\n\n";
+    for (int r = 1; r <= row; r++)
+    {
+        for (int c = 1; c <= col; c++)
+        {
+            cout << matrix1[r][c] << "\t";
+        }
+        cout << "\t";
+        for (int c = 1; c <= col; c++)
+        {
+            cout << matrix2[r][c] << "\t";
         }
         cout << "\n";
     }
+    cout << "\na/A to find the sum,\ns/S to find the difference\n";
+    cout << "\nWhat you want to do ?\n";
+    cin >> choose;
+    cout << "\n\n";
+    if (choose == "A" || choose == "a")
+    {
+        for (int r = 1; r <= row; r++)
+        {
+            for (int c = 1; c <= col; c++)
+            {
+                cout << matrix1[r][c] + matrix2[r][c] << "\t";
+            }
+            cout << "\n";
+        }
+    }
+    else if (choose == "S" || choose == "s")
+    {
+        for (int r = 1; r <= row; r++)
+        {
+            for (int c = 1; c <= col; c++)
+            {
+                cout << matrix1[r][c] - matrix2[r][c] << "\t";
+            }
+            cout << "\n";
+        }
+    }
+    else
+    {
+        cout << "PLEASE ENTER A VALID CODE ! \n";
+        matrix();
+    }
+
     ask();
     return 0;
 }
