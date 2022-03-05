@@ -79,11 +79,13 @@ int start()
 {
     cout << "\n";
     char X;
-    cout << "Available codes as of now are :- \nC(calculator),\nE(checks for odd even),\nS(shapes),\nT(table),\nO(d.o.b),\nX(Print Matrix),\nP(check for prime),\nM(Enter marks of students and find its total and percentage)";
+    cout << "Available codes as of now are :- \nC(calculator),\nE(checks for odd even),\nS(shapes),\nT(table),\nO(d.o.b),\nX(Print Matrix),\nP(check for prime),\nM(Enter marks of students and find its total and percentage),\nx(exit)";
     cout << "\n\nEnter a number code of what you : ";
     cin >> X;
     switch (X)
     {
+    case 'x':
+        break;
     case 'M':
         marks();
         break;
@@ -130,6 +132,8 @@ int start()
         dob();
         break;
     default:
+        cout << "\nPlease enter any valid code ! \n";
+        start();
         break;
     }
     return 0;
@@ -146,7 +150,19 @@ int add()
         sum = sum + num[i];
     }
     cout << "sum of " << n << " numbers is = " << sum;
-    ask();
+    string choice;
+    cout << "\n\nPress 'C' to continue or Press 'M' to go to main menu : ";
+    cin >> choice;
+    if (choice == "C" || choice == "c")
+    {
+        add();
+    }
+    else if (choice == "M" || choice == "m")
+    {
+        start();
+    }
+    else
+        cout << "\nPlease enter any valid code ! \n";
     return 0;
 }
 int mul()
@@ -161,7 +177,19 @@ int mul()
         product = product * num[i];
     }
     cout << "product of " << n << " numbers is = " << product;
-    ask();
+    string choice;
+    cout << "\n\nPress 'C' to continue or Press 'M' to go to main menu : ";
+    cin >> choice;
+    if (choice == "C" || choice == "c")
+    {
+        mul();
+    }
+    else if (choice == "M" || choice == "m")
+    {
+        start();
+    }
+    else
+        cout << "\nPlease enter any valid code ! \n";
     return 0;
 }
 int div()
@@ -177,7 +205,19 @@ int div()
     {
         cout << "Quotient is " << num2 / num1 << " and remainder is " << num2 % num1;
     }
-    ask();
+    string choice;
+    cout << "\n\nPress 'C' to continue or Press 'M' to go to main menu : ";
+    cin >> choice;
+    if (choice == "C" || choice == "c")
+    {
+        div();
+    }
+    else if (choice == "M" || choice == "m")
+    {
+        start();
+    }
+    else
+        cout << "\nPlease enter any valid code ! \n";
     return 0;
 }
 int table()
@@ -189,7 +229,19 @@ int table()
     {
         printf("%d x %d = %d\n", n, i, n * i);
     }
-    ask();
+    string choice;
+    cout << "\n\nPress 'C' to continue or Press 'M' to go to main menu : ";
+    cin >> choice;
+    if (choice == "C" || choice == "c")
+    {
+        table();
+    }
+    else if (choice == "M" || choice == "m")
+    {
+        start();
+    }
+    else
+        cout << "\nPlease enter any valid code ! \n";
     return 0;
 }
 int matrix()
@@ -264,7 +316,19 @@ int matrix()
         matrix();
     }
 
-    ask();
+    string choice;
+    cout << "\n\nPress 'C' to continue or Press 'M' to go to main menu : ";
+    cin >> choice;
+    if (choice == "C" || choice == "c")
+    {
+        matrix();
+    }
+    else if (choice == "M" || choice == "m")
+    {
+        start();
+    }
+    else
+        cout << "\nPlease enter any valid code ! \n";
     return 0;
 }
 int sub()
@@ -280,7 +344,19 @@ int sub()
     {
         cout << "Difference of " << num1 << " and " << num2 << " is " << num2 - num1;
     }
-    ask();
+    string choice;
+    cout << "\n\nPress 'C' to continue or Press 'M' to go to main menu : ";
+    cin >> choice;
+    if (choice == "C" || choice == "c")
+    {
+        sub();
+    }
+    else if (choice == "M" || choice == "m")
+    {
+        start();
+    }
+    else
+        cout << "\nPlease enter any valid code ! \n";
     return 0;
 }
 int marks()
@@ -313,7 +389,19 @@ int marks()
         cout << "\nTotal marks of " << name[i] << " is " << sum << " out of 500"
              << " and percentage is " << per << "% .";
     }
-    ask();
+    string choice;
+    cout << "\n\nPress 'C' to continue or Press 'M' to go to main menu : ";
+    cin >> choice;
+    if (choice == "C" || choice == "c")
+    {
+        marks();
+    }
+    else if (choice == "M" || choice == "m")
+    {
+        start();
+    }
+    else
+        cout << "\nPlease enter any valid code ! \n";
     return 0;
 }
 // int prime()
@@ -383,7 +471,19 @@ int dob()
     {
         printf(" ARE U DOING TIME TRAVEL ?");
     }
-    ask();
+    string choice;
+    cout << "\n\nPress 'C' to continue or Press 'M' to go to main menu : ";
+    cin >> choice;
+    if (choice == "C" || choice == "c")
+    {
+        dob();
+    }
+    else if (choice == "M" || choice == "m")
+    {
+        start();
+    }
+    else
+        cout << "\nPlease enter any valid code ! \n";
     return 0;
 }
 int oddeven()
@@ -399,17 +499,35 @@ int oddeven()
     {
         cout << num1 << " is a odd number .";
     }
-    ask();
+    string choice;
+    cout << "\n\nPress 'C' to continue or Press 'M' to go to main menu : ";
+    cin >> choice;
+    if (choice == "C" || choice == "c")
+    {
+        oddeven();
+    }
+    else if (choice == "M" || choice == "m")
+    {
+        start();
+    }
+    else
+        cout << "\nPlease enter any valid code ! \n";
+
     return 0;
 }
 int shapes()
 {
     char S;
-    cout << "s(star),\nt(temple),\nr(rectangle),\nq(square)";
+    cout << "s(star),\nt(temple),\nr(rectangle),\nq(square),\nm(main menu),\nx(exit)";
     cout << "\nWhat shape you want to see ?\n";
     cin >> S;
     switch (S)
     {
+    case 'm':
+        start();
+        break;
+    case 'x':
+        break;
     case 'r':
     {
         int row, col, s;
@@ -442,7 +560,8 @@ int shapes()
         {
             cout << "x ";
         }
-        ask();
+        cout << "\n\n";
+        shapes();
     }
     break;
     case 'q':
@@ -477,7 +596,8 @@ int shapes()
         {
             cout << "x ";
         }
-        ask();
+        cout << "\n\n";
+        shapes();
     }
     break;
     case 's':
@@ -558,7 +678,8 @@ int shapes()
             e++;
             printf("\n");
         }
-        ask();
+        cout << "\n\n";
+        shapes();
     }
     break;
     case 't':
@@ -658,10 +779,13 @@ int shapes()
                 printf("-");
             }
         }
-        ask();
+        cout << "\n\n";
+        shapes();
     }
     break;
     default:
+        cout << "\nPlease enter any valid code ! \n\n";
+        shapes();
         break;
     }
     return 0;
