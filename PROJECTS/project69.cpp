@@ -247,6 +247,7 @@ int table()
 int matrix()
 {
     int row, col;
+    string option;
     string choose;
     int matrix1[100][100];
     int matrix2[100][100];
@@ -298,6 +299,19 @@ int matrix()
             }
             cout << "\n";
         }
+        cout << "Want to see difference also ? Press 'S' ";
+        cin >> option;
+        if (option == "s" || option == "S")
+        {
+            for (int r = 1; r <= row; r++)
+            {
+                for (int c = 1; c <= col; c++)
+                {
+                    cout << matrix1[r][c] - matrix2[r][c] << "\t";
+                }
+                cout << "\n";
+            }
+        }
     }
     else if (choose == "S" || choose == "s")
     {
@@ -308,6 +322,20 @@ int matrix()
                 cout << matrix1[r][c] - matrix2[r][c] << "\t";
             }
             cout << "\n";
+        }
+
+        cout << "Want to see sum also ? Press 'A' ";
+        cin >> option;
+        if (option == "a" || option == "A")
+        {
+            for (int r = 1; r <= row; r++)
+            {
+                for (int c = 1; c <= col; c++)
+                {
+                    cout << matrix1[r][c] + matrix2[r][c] << "\t";
+                }
+                cout << "\n";
+            }
         }
     }
     else
