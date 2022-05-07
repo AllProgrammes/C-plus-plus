@@ -11,9 +11,10 @@ class seniors : students // This my friend is called abstracion
     string name;
     int hindi, english, maths, science, sst;
 
-public:               // public functions or data members
-    static int index; // static variables declaration
-    void setdata()    // class function
+public: // public functions or data members
+    static int index;
+    static int scolarship_count; // static variables declaration
+    void setdata()               // class function
     {
         cout << "\nIndex " << index + 1 << endl;
         cout << "Enter his/her name : ";
@@ -40,29 +41,36 @@ public:               // public functions or data members
              << "4. Science = " << science << endl
              << "5. SST = " << sst << endl;
     }
+    void total_scholarship()
+    {
+        cout << "\nTotal " << scolarship_count << " students got scholarship" << endl;
+    }
     void scholarship() // class function
     {
         float total_marks = hindi + english + maths + science + sst;
         if (total_marks >= 450)
         {
+            scolarship_count++;
             if (hindi >= 95)
             {
-                cout << "\n\n"
-                     << name << " got 90% scolarship" << endl;
+                cout << name << " got 90% scolarship" << endl;
             }
             else
-                cout << "\n\n"
-                     << name << " got 80% scolarship" << endl;
+            {
+                cout << name << " got 80% scolarship" << endl;
+            }
         }
     }
 };
-int seniors::index = 0; // static variable
+int seniors::index = 0;            // static variable
+int seniors::scolarship_count = 0; // static variable
 int main()
 {
     int size;  // int
     welcome(); // function call
     cout << "\n\nEnter the total numbers of students in your wing : ";
     cin >> size;
+
     seniors student_index[size];   // array of objects
     for (int i = 0; i < size; i++) // loop
     {
@@ -72,11 +80,15 @@ int main()
     {
         student_index[i].getdata();
     }
+    cout << "\nStudents who got scholarship are as follows :- \n";
     for (int i = 0; i < size; i++)
     {
         student_index[i].scholarship();
+        if (i == size - 1)
+        {
+            student_index->total_scholarship();
+        }
     }
-
     return 0;
 }
 void welcome() // function
