@@ -47,10 +47,12 @@ public:               // public functions or data members
         {
             if (hindi >= 95)
             {
-                cout << "\n\nCongratulations " << name << " !! \nYou got 90% scolarship" << endl;
+                cout << "\n\n"
+                     << name << " got 90% scolarship" << endl;
             }
             else
-                cout << "\n\nCongratulations " << name << " s!! \nYou got 80% scolarship" << endl;
+                cout << "\n\n"
+                     << name << " got 80% scolarship" << endl;
         }
     }
 };
