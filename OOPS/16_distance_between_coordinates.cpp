@@ -39,17 +39,18 @@ co_ordinate2::co_ordinate2() //
 
 void compare(co_ordinate1 data1, co_ordinate2 data2) // made function which takes 2 class
 {
-    float x, y, z;
-    // x = (data2.x - data1.x) * (data2.x - data1.x); // can be also written as --> x=pow((data2.x - data1.x),2);
-    // y = (data2.y - data1.y) * (data2.y - data1.y); // can be also written as --> y=pow((data2.y - data1.y),2);
-    // further it can be also written as below :-
-    // z = sqrt(pow((data2.x - data1.x), 2) + pow((data2.y - data1.y), 2)); ----->but this was giving wrong value
+    // float x, y, z;
+    //  x = (data2.x - data1.x) * (data2.x - data1.x); // can be also written as --> x=pow((data2.x - data1.x),2);
+    //  y = (data2.y - data1.y) * (data2.y - data1.y); // can be also written as --> y=pow((data2.y - data1.y),2);
+    //  further it can be also written as below :-
+    //  z = sqrt(pow((data2.x - data1.x), 2) + pow((data2.y - data1.y), 2)); ----->but this was giving very accurate value
 
     // So I breaked it into small parts x and y then did manually
-    x = pow((data2.x - data1.x), 2);
-    y = pow((data2.y - data1.y), 2);
-    z = sqrt(x + y);
-    cout << "The distance between x and y co-ordinates is " << z << endl;
+    // x = pow((data2.x - data1.x), 2);
+    // y = pow((data2.y - data1.y), 2);
+    // z = hypot((data2.x - data1.x), (data2.y - data1.y));
+    // z = sqrt(x + y); all became obsuolete LOL this fx does the work
+    cout << "The distance between x and y co-ordinates is " << hypot((data2.x - data1.x), (data2.y - data1.y)) << endl;
 }
 
 int main()
