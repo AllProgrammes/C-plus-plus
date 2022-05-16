@@ -1,5 +1,6 @@
 #include <iostream>
 #include <math.h>
+#include <cmath>
 using namespace std;
 class calculator
 {
@@ -8,6 +9,9 @@ class calculator
     void percentage();
     void power();
     void pie();
+    void cos_value();
+    void sin_value();
+    void tan_value();
 
 public:
     char option;
@@ -25,7 +29,7 @@ public:
     void setdata()
     {
         int choice;
-        cout << "\nWhat do you want to do ?\n1. Power\n2. Square Root\n3. Percentage\n4. Pi\n"
+        cout << "\nWhat do you want to do ?\n1. Power\n2. Square Root\n3. Percentage\n4. Pi\n5. Cos \n6. Sin \n7. Tan"
              << endl;
         cout << "Enter index here : ";
         cin >> choice;
@@ -40,6 +44,12 @@ public:
             percentage();
         case 4:
             pie();
+        case 5:
+            cos_value();
+        case 6:
+            sin_value();
+        case 7:
+            tan_value();
         default:
             cout << "Please enter a correct index !" << endl;
             setdata();
@@ -84,4 +94,28 @@ void calculator::pie()
     cout << "Enter the number : ";
     cin >> a;
     cout << "The value of " << a << "pi is " << a * 3.14 << endl;
+}
+void calculator::cos_value()
+{
+    cout << "Enter the number : ";
+    cin >> a;
+    cout << "The value of cos(" << a << ")"
+         << " is ->> " << cos(a) << endl;
+    choice();
+}
+void calculator::sin_value()
+{
+    cout << "Enter the number : ";
+    cin >> a;
+    cout << "The value of sin(" << a << ")"
+         << " is ->> " << sin(a) << endl;
+    choice();
+}
+void calculator::tan_value()
+{
+    cout << "Enter the number : ";
+    cin >> a;
+    cout << "The value of tan(" << a << ")"
+         << " is ->> " << tan(a) << endl;
+    choice();
 }
