@@ -64,6 +64,9 @@ protected:
     void sin_value();
     void tan_value();
     void exp_value();
+    void log_value();
+    void log10_value();
+    void cubic_root();
 
 public:
     char option;
@@ -81,7 +84,7 @@ public:
     void setdata_scientific()
     {
         int choice;
-        cout << "\nWhat do you want to do ?\n1. Power\n2. Square Root\n3. Percentage\n4. Pi\n5. Cos \n6. Sin \n7. Tan\n8. Exp"
+        cout << "\nWhat do you want to do ?\n1. Power\n2. Square Root\n3. Percentage\n4. Pi\n5. Cos \n6. Sin \n7. Tan\n8. Exp\n9. Log\n10. Log10\n11. Cubic Root"
              << endl;
         cout << "Enter index here : ";
         cin >> choice;
@@ -104,6 +107,12 @@ public:
             tan_value();
         case 8:
             exp_value();
+        case 9:
+            log_value();
+        case 10:
+            log10_value();
+        case 11:
+            cubic_root();
         default:
             cout << "Please enter a correct index !" << endl;
             setdata_scientific();
@@ -148,7 +157,13 @@ void scientific_calculator::square_root()
     cout << "Enter the number : ";
     cin >> a;
     cout << "Sqaure root of " << a << " is " << sqrt(a) << endl;
-
+    choice();
+}
+void scientific_calculator::cubic_root()
+{
+    cout << "Enter the number : ";
+    cin >> a;
+    cout << "Cubic root of " << a << " is " << cbrt(a) << endl;
     choice();
 }
 void scientific_calculator::percentage()
@@ -205,6 +220,22 @@ void scientific_calculator::exp_value()
     cin >> a;
     cout << "The value of exp(" << a << ")"
          << " is ->> " << exp(a) << endl;
+    choice();
+}
+void scientific_calculator::log10_value()
+{
+    cout << "Enter the number : ";
+    cin >> a;
+    cout << "The value of log10(" << a << ")"
+         << " is ->> " << log10(a) << endl;
+    choice();
+}
+void scientific_calculator::log_value()
+{
+    cout << "Enter the number : ";
+    cin >> a;
+    cout << "The value of log(" << a << ")"
+         << "with base 10 is ->> " << log(a) << endl;
     choice();
 }
 void simple_calculator::sum()
