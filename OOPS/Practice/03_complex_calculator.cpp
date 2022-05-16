@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cmath>
 #include <math.h>
 using namespace std;
 //-------------------------------------------------------------SIMPLE CALCULATOR-----------------------------------------------------//
@@ -62,6 +63,7 @@ protected:
     void cos_value();
     void sin_value();
     void tan_value();
+    void exp_value();
 
 public:
     char option;
@@ -79,7 +81,7 @@ public:
     void setdata_scientific()
     {
         int choice;
-        cout << "\nWhat do you want to do ?\n1. Power\n2. Square Root\n3. Percentage\n4. Pi\n5. Cos \n6. Sin \n7. Tan"
+        cout << "\nWhat do you want to do ?\n1. Power\n2. Square Root\n3. Percentage\n4. Pi\n5. Cos \n6. Sin \n7. Tan\n8. Exp"
              << endl;
         cout << "Enter index here : ";
         cin >> choice;
@@ -100,6 +102,8 @@ public:
             sin_value();
         case 7:
             tan_value();
+        case 8:
+            exp_value();
         default:
             cout << "Please enter a correct index !" << endl;
             setdata_scientific();
@@ -193,6 +197,14 @@ void scientific_calculator::tan_value()
     cin >> a;
     cout << "The value of tan(" << a << ")"
          << " is ->> " << tan(a) << endl;
+    choice();
+}
+void scientific_calculator::exp_value()
+{
+    cout << "Enter the number : ";
+    cin >> a;
+    cout << "The value of exp(" << a << ")"
+         << " is ->> " << exp(a) << endl;
     choice();
 }
 void simple_calculator::sum()
