@@ -19,7 +19,7 @@ public:
     }
     void display() // a typical AF fucntion to display a and b
     {
-        cout << "Your complex number is " << a << " + " << b << "i\n\n";
+        cout << "Sum of both the complex numbers is " << a << " + " << b << "i\n\n";
     }
 };
 int main()
