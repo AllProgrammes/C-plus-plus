@@ -10,6 +10,6 @@ int main()
   float base, height;
   cout << "Enter the base and height : ";
   cin >> base >> height;
-  cout << "Area to triagle is : " << area_of_triangle(base, height) << " sq cm ";
+  cout << "Area to triagle is : " << area_of_triangle(base, height) << " sq cm " << endl;
   return 0;
 }
